@@ -47,6 +47,9 @@ cp "$TEMP_DIR/copy_path_extension.py" "$EXTENSION_DIR/"
 # Cleanup
 rm -rf "$TEMP_DIR"
 
+
+chmod +r "$EXTENSION_DIR/copy_path_extension.py"
+
 # Restart Nautilus
 echo "Restarting Nautilus..."
 nautilus -q
