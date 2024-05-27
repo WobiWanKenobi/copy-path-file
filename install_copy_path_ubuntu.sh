@@ -45,11 +45,11 @@ echo "Contents of the cloned repository:"
 ls -R "$TEMP_DIR"
 
 echo "Attempting to copy extension..."
-if [ -f "$TEMP_DIR/src/ubuntu/cbfubuntu.py" ]; then
-    cp "$TEMP_DIR/src/ubuntu/cbfubuntu.py" "$EXTENSION_DIR/"
+if [ -f "$TEMP_DIR/src/ubuntu/cpfubuntu.py" ]; then
+    cp "$TEMP_DIR/src/ubuntu/cpfubuntu.py" "$EXTENSION_DIR/"
     echo "Copy successful."
 else
-    echo "Error: cbfubuntu.py not found in the repository."
+    echo "Error: cpfubuntu.py not found in the repository."
 fi
 
 echo "Contents of the extension directory:"
@@ -59,7 +59,7 @@ ls "$EXTENSION_DIR"
 rm -rf "$TEMP_DIR"
 
 # Set correct permissions
-chmod +r "$EXTENSION_DIR/cbfubuntu.py"
+chmod +r "$EXTENSION_DIR/cpfubuntu.py"
 
 # Restart Nautilus
 echo "Restarting Nautilus..."
