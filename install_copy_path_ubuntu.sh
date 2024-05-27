@@ -35,19 +35,30 @@ fi
 REPO_URL="https://github.com/WobiWanKenobi/copy-path-file"
 TEMP_DIR=$(mktemp -d)
 
-echo "Cloning repository..."
+echo "Cloning repository to $TEMP_DIR..."
 git clone "$REPO_URL" "$TEMP_DIR"
 
 EXTENSION_DIR=~/.local/share/nautilus-python/extensions
 mkdir -p "$EXTENSION_DIR"
 
-echo "Copying extension..."
-cp "$TEMP_DIR/copy_path_extension.py" "$EXTENSION_DIR/"
+echo "Contents of the cloned repository:"
+ls -R "$TEMP_DIR"
+
+echo "Attempting to copy extension..."
+if [ -f "$TEMP_DIR/src/ubuntu/copy_path_extension.py" ]; then
+    cp "$TEMP_DIR/src/ubuntu/copy_path_extension.py" "$EXTENSION_DIR/"
+    echo "Copy successful."
+else
+    echo "Error: copy_path_extension.py not found in the repository."
+fi
+
+echo "Contents of the extension directory:"
+ls "$EXTENSION_DIR"
 
 # Cleanup
 rm -rf "$TEMP_DIR"
 
-
+# Set correct permissions
 chmod +r "$EXTENSION_DIR/copy_path_extension.py"
 
 # Restart Nautilus
