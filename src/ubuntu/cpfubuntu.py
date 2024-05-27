@@ -10,12 +10,12 @@ Copy Path to File - Ubuntu
 """
 
 import subprocess
-from gi.repository import Nautilus, GObject
+from gi.repository import Nautilus, GObject, Gtk, Gdk
 import gi
 gi.require_version("Nautilus", "3.0")
 
 
-class CopyPathExtension(GObject.Gobject, Nautilus.MenuProvider):
+class CopyPathExtension(GObject.Object, Nautilus.MenuProvider):
 
     def __init__(self):
         pass
