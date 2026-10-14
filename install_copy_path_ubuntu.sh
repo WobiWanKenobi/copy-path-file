@@ -27,11 +27,6 @@ if ! dpkg -s python3-gi >/dev/null 2>&1; then
     sudo apt install -y python3-gi
 fi
 
-if ! command_exists xclip; then
-    echo "xclip is not installed. Installing..."
-    sudo apt install -y xclip
-fi
-
 REPO_URL="https://github.com/WobiWanKenobi/copy-path-file"
 TEMP_DIR=$(mktemp -d)
 

@@ -16,7 +16,6 @@ These extensions are required to install and run the extension correctly. They a
 - pip3
 - python3-nautilus
 - python3-gi
-- x-clip
 
 ## :gear: Installation Instructions
 
